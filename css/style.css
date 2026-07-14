@@ -368,6 +368,9 @@ section{ padding: 90px 24px; }
   z-index: 999;
   padding: 24px;
 }
+.popup[hidden]{
+  display: none;
+}
 .popup__box{
   position: relative;
   background: var(--white);
