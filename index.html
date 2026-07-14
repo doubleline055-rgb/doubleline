@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dubole Line — Double Everything</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#home" class="nav__logo">
+      <img src="assets/logo-full.jpg" alt="Dubole Line" class="nav__logo-img">
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#plans">Plans</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#plans" class="btn btn--amber nav__cta">Order Now</a>
+
+    <button class="nav__burger" id="navBurger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero__dots" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <p class="eyebrow"><span class="bars" aria-hidden="true"></span>Kosher. No Data. No Games.</p>
+    <h1 class="hero__title">One kosher phone.<br>Two numbers.<br><span class="hero__title-accent">Zero extra charges.</span></h1>
+    <p class="hero__sub">Dubole Line gives you a real Israeli number and a US-reachable number on one kosher line — so family and friends call from the States without paying a cent extra, and you never touch data.</p>
+    <div class="hero__ctas">
+      <a href="#plans" class="btn btn--amber">See the Plans</a>
+      <a href="#how-it-works" class="btn btn--ghost">How It Works →</a>
+    </div>
+  </div>
+  <div class="hero__mark" aria-hidden="true">
+    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="hero__mark-svg">
+      <circle cx="70" cy="150" r="10" fill="var(--amber)"/>
+      <text x="40" y="185" fill="var(--cream)" font-family="Inter" font-size="14" font-weight="600">ISRAEL</text>
+      <circle cx="330" cy="150" r="10" fill="var(--amber)"/>
+      <text x="290" y="185" fill="var(--cream)" font-family="Inter" font-size="14" font-weight="600">USA</text>
+      <line x1="90" y1="150" x2="190" y2="150" stroke="var(--amber)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+      <line x1="210" y1="150" x2="310" y2="150" stroke="var(--amber)" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+      <rect x="192" y="120" width="7" height="60" rx="3" fill="var(--amber)"/>
+      <rect x="203" y="120" width="7" height="60" rx="3" fill="var(--cream)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<section class="trust">
+  <div class="trust__inner">
+    <div class="trust__item"><span class="dot"></span>Kosher certified</div>
+    <div class="trust__item"><span class="dot"></span>No internet, no data</div>
+    <div class="trust__item"><span class="dot"></span>Works across US &amp; Israel</div>
+    <div class="trust__item"><span class="dot"></span>Real human support</div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how" id="how-it-works">
+  <p class="eyebrow eyebrow--dark"><span class="bars"></span>How It Works</p>
+  <h2 class="section-title">Three steps. One kosher line.</h2>
+
+  <div class="how__steps">
+    <div class="how__step">
+      <span class="how__num">01</span>
+      <h3>Order your SIM</h3>
+      <p>Choose a plan and order your kosher SIM card directly from the site, or through Amazon.</p>
+    </div>
+    <div class="how__step">
+      <span class="how__num">02</span>
+      <h3>Get two numbers, one line</h3>
+      <p>Your SIM arrives with a real Israeli number and a US-reachable number, active on a single kosher device.</p>
+    </div>
+    <div class="how__step">
+      <span class="how__num">03</span>
+      <h3>Call, without the extra charge</h3>
+      <p>Family in the US call your US-reachable number like a local call. No roaming games, no data, ever.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PLANS ===== -->
+<section class="plans" id="plans">
+  <p class="eyebrow"><span class="bars"></span>Plans</p>
+  <h2 class="section-title section-title--light">Pick your line</h2>
+  <p class="section-sub">Final pricing is confirmed at checkout. Plans below are a preview.</p>
+
+  <div class="plans__grid">
+    <div class="plan-card">
+      <h3>Basic</h3>
+      <p class="plan-card__price">Starting at $19<span>/mo</span></p>
+      <ul>
+        <li>Israeli number</li>
+        <li>US-reachable number</li>
+        <li>Kosher, no data</li>
+      </ul>
+      <a href="#contact" class="btn btn--outline">Order Basic</a>
+    </div>
+    <div class="plan-card plan-card--featured">
+      <span class="plan-card__badge">Most Popular</span>
+      <h3>Standard</h3>
+      <p class="plan-card__price">Starting at $29<span>/mo</span></p>
+      <ul>
+        <li>Everything in Basic</li>
+        <li>More US calling minutes</li>
+        <li>Priority support</li>
+      </ul>
+      <a href="#contact" class="btn btn--amber">Order Standard</a>
+    </div>
+    <div class="plan-card">
+      <h3>Family</h3>
+      <p class="plan-card__price">Starting at $69<span>/mo</span></p>
+      <ul>
+        <li>Up to 4 lines</li>
+        <li>Shared US minutes</li>
+        <li>One monthly bill</li>
+      </ul>
+      <a href="#contact" class="btn btn--outline">Order Family</a>
+    </div>
+  </div>
+
+  <p class="plans__amazon">Prefer Amazon? <a href="#" id="amazonLink">Buy the SIM card here →</a></p>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <p class="eyebrow eyebrow--dark"><span class="bars"></span>FAQ</p>
+  <h2 class="section-title">Questions, answered</h2>
+
+  <div class="faq__list" id="faqList">
+    <details class="faq__item" open>
+      <summary>Is this really a kosher line — no internet at all?</summary>
+      <p>Correct. Dubole Line runs on kosher-certified devices with no data access, so there's no internet, browser, or app store — calling and texting only.</p>
+    </details>
+    <details class="faq__item">
+      <summary>How do people in the US call me without paying extra?</summary>
+      <p>Your line comes with a US-reachable number alongside your Israeli number. When someone in the US calls that number, it's treated like a normal domestic US call on their end.</p>
+    </details>
+    <details class="faq__item">
+      <summary>How long does shipping take?</summary>
+      <p>Shipping times depend on your location — this will be confirmed at checkout.</p>
+    </details>
+  </div>
+  <p class="faq__note">More questions get added here regularly.</p>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <p class="eyebrow"><span class="bars"></span>About</p>
+  <h2 class="section-title section-title--light">Double everything, simplified</h2>
+  <p class="about__body">Dubole Line was built for one purpose: let people live a kosher, data-free life without cutting off the people who call them from the US. One kosher device, two numbers, no extra charges — that's double everything.</p>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="contact__inner">
+    <div class="contact__copy">
+      <p class="eyebrow eyebrow--dark"><span class="bars"></span>Contact</p>
+      <h2 class="section-title">Questions? We're here.</h2>
+      <p>Send a message and we'll get back to you directly.</p>
+    </div>
+
+    <form class="contact__form" id="contactForm">
+      <label>
+        Name
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="4" required></textarea>
+      </label>
+      <button type="submit" class="btn btn--amber">Send Message</button>
+      <p class="contact__status" id="contactStatus"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ===== POPUP (hidden by default, toggled by admin later) ===== -->
+<div class="popup" id="popup" hidden>
+  <div class="popup__box">
+    <button class="popup__close" id="popupClose" aria-label="Close">&times;</button>
+    <p id="popupText">Announcement text goes here.</p>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__inner">
+    <img src="assets/logo-full.jpg" alt="Dubole Line" class="footer__logo">
+    <nav class="footer__links">
+      <a href="#home">Home</a>
+      <a href="#plans">Plans</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="footer__copy">&copy; 2026 Dubole Line. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
