@@ -102,38 +102,8 @@
   <h2 class="section-title section-title--light">Pick your line</h2>
   <p class="section-sub">Final pricing is confirmed at checkout. Plans below are a preview.</p>
 
-  <div class="plans__grid">
-    <div class="plan-card">
-      <h3>Basic</h3>
-      <p class="plan-card__price">Starting at $19<span>/mo</span></p>
-      <ul>
-        <li>Israeli number</li>
-        <li>US-reachable number</li>
-        <li>Kosher, no data</li>
-      </ul>
-      <a href="#contact" class="btn btn--outline">Order Basic</a>
-    </div>
-    <div class="plan-card plan-card--featured">
-      <span class="plan-card__badge">Most Popular</span>
-      <h3>Standard</h3>
-      <p class="plan-card__price">Starting at $29<span>/mo</span></p>
-      <ul>
-        <li>Everything in Basic</li>
-        <li>More US calling minutes</li>
-        <li>Priority support</li>
-      </ul>
-      <a href="#contact" class="btn btn--amber">Order Standard</a>
-    </div>
-    <div class="plan-card">
-      <h3>Family</h3>
-      <p class="plan-card__price">Starting at $69<span>/mo</span></p>
-      <ul>
-        <li>Up to 4 lines</li>
-        <li>Shared US minutes</li>
-        <li>One monthly bill</li>
-      </ul>
-      <a href="#contact" class="btn btn--outline">Order Family</a>
-    </div>
+  <div class="plans__grid" id="plansGrid">
+    <p style="color: var(--cream);">Loading plans...</p>
   </div>
 
   <p class="plans__amazon">Prefer Amazon? <a href="#" id="amazonLink">Buy the SIM card here →</a></p>
@@ -227,5 +197,6 @@
 <script type="module" src="js/main.js"></script>
 <script type="module" src="js/faq.js"></script>
 <script type="module" src="js/contact.js"></script>
+<script type="module" src="js/plans.js"></script>
 </body>
 </html>
