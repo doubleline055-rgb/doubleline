@@ -148,3 +148,7 @@
   white-space: nowrap;
 }
 .admin-list-item__delete:hover{ text-decoration: underline; }
+
+.admin-login[hidden]{
+  display: none;
+}
