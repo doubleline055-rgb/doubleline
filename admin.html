@@ -43,6 +43,7 @@
     <button class="admin-tab is-active" data-tab="faqs">FAQs</button>
     <button class="admin-tab" data-tab="plans">Plans</button>
     <button class="admin-tab" data-tab="popup">Popup / Banner</button>
+    <button class="admin-tab" data-tab="messages">Messages</button>
   </nav>
 
   <!-- FAQ TAB -->
@@ -60,13 +61,42 @@
   <!-- PLANS TAB -->
   <section class="admin-panel" id="panel-plans">
     <h2>Manage Plans</h2>
-    <p class="admin-note">Coming in the next step.</p>
+    <form id="planForm" class="admin-form">
+      <input type="text" id="planName" placeholder="Plan name (e.g. Basic)" required>
+      <input type="text" id="planPrice" placeholder="Price (e.g. 19)" required>
+      <textarea id="planFeatures" placeholder="Features, one per line"></textarea>
+      <label style="display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px;">
+        <input type="checkbox" id="planFeatured" style="width:auto;">
+        Mark as "Most Popular"
+      </label>
+      <button type="submit" class="btn btn--amber">Add Plan</button>
+    </form>
+    <div class="admin-list" id="planAdminList">Loading...</div>
+  </section>
+
+<!-- MESSAGES TAB -->
+  <section class="admin-panel" id="panel-messages">
+    <h2>Contact Messages</h2>
+    <div class="admin-list" id="messagesAdminList">Loading...</div>
   </section>
 
   <!-- POPUP TAB -->
   <section class="admin-panel" id="panel-popup">
     <h2>Popup / Banner</h2>
-    <p class="admin-note">Coming in the next step.</p>
+    <form id="popupForm" class="admin-form">
+      <label style="font-weight:600; font-size:14px;">Style</label>
+      <select id="popupType" style="padding:12px 14px; border-radius:10px; border:1.5px solid rgba(0,0,0,0.12); font-family:var(--font-body); font-size:15px;">
+        <option value="popup">Popup (appears once on landing)</option>
+        <option value="banner">Banner (sticky bar at top)</option>
+      </select>
+      <textarea id="popupText" placeholder="Message text" required></textarea>
+      <label style="display:flex; align-items:center; gap:8px; font-weight:600; font-size:14px;">
+        <input type="checkbox" id="popupActive" style="width:auto;">
+        Active (show this on the live site)
+      </label>
+      <button type="submit" class="btn btn--amber">Save</button>
+      <p class="admin-note" id="popupStatus"></p>
+    </form>
   </section>
 </div>
 

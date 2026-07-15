@@ -6,14 +6,6 @@ navBurger?.addEventListener('click', () => {
   navLinks.classList.toggle('is-open');
 });
 
-// ===== Contact form (placeholder — will connect to EmailJS/Formspree later) =====
-const contactForm = document.getElementById('contactForm');
-const contactStatus = document.getElementById('contactStatus');
-
-contactForm?.addEventListener('submit', (e) => {
-  e.preventDefault();
-  contactStatus.textContent = "This form isn't connected yet — we'll wire it up to send real emails next.";
-});
 
 // ===== Amazon link placeholder =====
 const amazonLink = document.getElementById('amazonLink');
