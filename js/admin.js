@@ -213,46 +213,46 @@ async function loadSiteSettings() {
 
 // ===== SITE TEXT (CONTENT) =====
 const CONTENT_FIELDS = [
-  { section: "Hero", key: "hero.eyebrow", label: "Small label above headline", type: "text" },
-  { section: "Hero", key: "hero.titleLine1", label: "Headline — line 1", type: "text" },
-  { section: "Hero", key: "hero.titleLine2", label: "Headline — line 2", type: "text" },
-  { section: "Hero", key: "hero.titleLine3", label: "Headline — line 3 (accent color)", type: "text" },
-  { section: "Hero", key: "hero.subtitle", label: "Subtitle paragraph", type: "textarea" },
-  { section: "Hero", key: "hero.ctaPrimary", label: "Primary button text", type: "text" },
-  { section: "Hero", key: "hero.ctaSecondary", label: "Secondary button text", type: "text" },
+  { section: "Hero", key: "hero.eyebrow", label: "Small label above headline", type: "text", default: "Kosher. No Data. No Games." },
+  { section: "Hero", key: "hero.titleLine1", label: "Headline — line 1", type: "text", default: "One kosher phone." },
+  { section: "Hero", key: "hero.titleLine2", label: "Headline — line 2", type: "text", default: "Two numbers." },
+  { section: "Hero", key: "hero.titleLine3", label: "Headline — line 3 (accent color)", type: "text", default: "Zero extra charges." },
+  { section: "Hero", key: "hero.subtitle", label: "Subtitle paragraph", type: "textarea", default: "Dubole Line gives you a real Israeli number and a US-reachable number on one kosher line — so family and friends call from the States without paying a cent extra, and you never touch data." },
+  { section: "Hero", key: "hero.ctaPrimary", label: "Primary button text", type: "text", default: "See the Plans" },
+  { section: "Hero", key: "hero.ctaSecondary", label: "Secondary button text", type: "text", default: "How It Works →" },
 
-  { section: "Trust Strip", key: "trust.item1", label: "Item 1", type: "text" },
-  { section: "Trust Strip", key: "trust.item2", label: "Item 2", type: "text" },
-  { section: "Trust Strip", key: "trust.item3", label: "Item 3", type: "text" },
+  { section: "Trust Strip", key: "trust.item1", label: "Item 1", type: "text", default: "Kosher certified" },
+  { section: "Trust Strip", key: "trust.item2", label: "Item 2", type: "text", default: "No internet, no data" },
+  { section: "Trust Strip", key: "trust.item3", label: "Item 3", type: "text", default: "Real human support" },
 
-  { section: "How It Works", key: "how.eyebrow", label: "Small label", type: "text" },
-  { section: "How It Works", key: "how.title", label: "Section title", type: "text" },
-  { section: "How It Works", key: "how.step1Title", label: "Step 1 title", type: "text" },
-  { section: "How It Works", key: "how.step1Text", label: "Step 1 text", type: "textarea" },
-  { section: "How It Works", key: "how.step2Title", label: "Step 2 title", type: "text" },
-  { section: "How It Works", key: "how.step2Text", label: "Step 2 text", type: "textarea" },
-  { section: "How It Works", key: "how.step3Title", label: "Step 3 title", type: "text" },
-  { section: "How It Works", key: "how.step3Text", label: "Step 3 text", type: "textarea" },
+  { section: "How It Works", key: "how.eyebrow", label: "Small label", type: "text", default: "How It Works" },
+  { section: "How It Works", key: "how.title", label: "Section title", type: "text", default: "Three steps. One kosher line." },
+  { section: "How It Works", key: "how.step1Title", label: "Step 1 title", type: "text", default: "Order your SIM" },
+  { section: "How It Works", key: "how.step1Text", label: "Step 1 text", type: "textarea", default: "Choose a plan and order your kosher SIM card directly from the site, or through Amazon." },
+  { section: "How It Works", key: "how.step2Title", label: "Step 2 title", type: "text", default: "Get two numbers, one line" },
+  { section: "How It Works", key: "how.step2Text", label: "Step 2 text", type: "textarea", default: "Your SIM arrives with a real Israeli number and a US-reachable number, active on a single kosher device." },
+  { section: "How It Works", key: "how.step3Title", label: "Step 3 title", type: "text", default: "Call, without the extra charge" },
+  { section: "How It Works", key: "how.step3Text", label: "Step 3 text", type: "textarea", default: "Family in the US call your US-reachable number like a local call. No roaming games, no data, ever." },
 
-  { section: "Plans", key: "plans.eyebrow", label: "Small label", type: "text" },
-  { section: "Plans", key: "plans.title", label: "Section title", type: "text" },
-  { section: "Plans", key: "plans.subtitle", label: "Subtitle", type: "textarea" },
-  { section: "Plans", key: "plans.amazonPrefix", label: "Amazon line prefix text", type: "text" },
-  { section: "Plans", key: "plans.amazonLinkText", label: "Amazon link text", type: "text" },
+  { section: "Plans", key: "plans.eyebrow", label: "Small label", type: "text", default: "Plans" },
+  { section: "Plans", key: "plans.title", label: "Section title", type: "text", default: "Pick your line" },
+  { section: "Plans", key: "plans.subtitle", label: "Subtitle", type: "textarea", default: "Final pricing is confirmed at checkout. Plans below are a preview." },
+  { section: "Plans", key: "plans.amazonPrefix", label: "Amazon line prefix text", type: "text", default: "Prefer Amazon?" },
+  { section: "Plans", key: "plans.amazonLinkText", label: "Amazon link text", type: "text", default: "Buy the SIM card here →" },
 
-  { section: "FAQ", key: "faq.eyebrow", label: "Small label", type: "text" },
-  { section: "FAQ", key: "faq.title", label: "Section title", type: "text" },
-  { section: "FAQ", key: "faq.note", label: "Bottom note", type: "text" },
+  { section: "FAQ", key: "faq.eyebrow", label: "Small label", type: "text", default: "FAQ" },
+  { section: "FAQ", key: "faq.title", label: "Section title", type: "text", default: "Questions, answered" },
+  { section: "FAQ", key: "faq.note", label: "Bottom note", type: "text", default: "More questions get added here regularly." },
 
-  { section: "About", key: "about.eyebrow", label: "Small label", type: "text" },
-  { section: "About", key: "about.title", label: "Section title", type: "text" },
-  { section: "About", key: "about.body", label: "Body paragraph", type: "textarea" },
+  { section: "About", key: "about.eyebrow", label: "Small label", type: "text", default: "About" },
+  { section: "About", key: "about.title", label: "Section title", type: "text", default: "Double everything, simplified" },
+  { section: "About", key: "about.body", label: "Body paragraph", type: "textarea", default: "Dubole Line was built for one purpose: let people live a kosher, data-free life without cutting off the people who call them from the US. One kosher device, two numbers, no extra charges — that's double everything." },
 
-  { section: "Contact", key: "contact.eyebrow", label: "Small label", type: "text" },
-  { section: "Contact", key: "contact.title", label: "Section title", type: "text" },
-  { section: "Contact", key: "contact.subtitle", label: "Subtitle", type: "textarea" },
+  { section: "Contact", key: "contact.eyebrow", label: "Small label", type: "text", default: "Contact" },
+  { section: "Contact", key: "contact.title", label: "Section title", type: "text", default: "Questions? We're here." },
+  { section: "Contact", key: "contact.subtitle", label: "Subtitle", type: "textarea", default: "Send a message and we'll get back to you directly." },
 
-  { section: "Footer", key: "footer.copyright", label: "Copyright line", type: "text" },
+  { section: "Footer", key: "footer.copyright", label: "Copyright line", type: "text", default: "© 2026 Dubole Line. All rights reserved." },
 ];
 
 const contentFieldsContainer = document.getElementById("contentFields");
@@ -319,6 +319,14 @@ function buildContentForm() {
 
 async function loadContentFields() {
   buildContentForm();
+
+  // Fill every field with its current default text first
+  CONTENT_FIELDS.forEach((field) => {
+    const el = document.querySelector(`#contentFields [data-key="${field.key}"]`);
+    if (el) el.value = field.default || "";
+  });
+
+  // Then overwrite with anything already saved in Firestore
   const snap = await getDoc(doc(db, "content", "site"));
   if (snap.exists()) {
     const data = snap.data();
