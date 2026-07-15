@@ -183,18 +183,18 @@ section{ padding: 90px 24px; }
   position: relative;
   background: var(--charcoal);
   color: var(--cream);
-  padding: 56px 24px 40px;
+  padding: 44px 24px 8px;
   overflow: hidden;
 }
 .hero__dots{
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 24px;
-  width: 180px;
-  height: 110px;
+  width: 140px;
+  height: 80px;
   background-image: radial-gradient(var(--amber) 2px, transparent 2px);
-  background-size: 20px 20px;
-  opacity: 0.35;
+  background-size: 18px 18px;
+  opacity: 0.3;
 }
 .hero__inner{
   position: relative;
@@ -218,9 +218,9 @@ section{ padding: 90px 24px; }
 .hero__ctas{ display: flex; gap: 16px; flex-wrap: wrap; }
 .hero__mark{
   max-width: var(--max-width);
-  margin: 24px auto 0;
+  margin: 10px auto 0;
 }
-.hero__mark-svg{ width: 100%; height: auto; max-width: 240px; opacity: 0.7; }
+.hero__mark-svg{ width: 100%; height: auto; max-width: 190px; opacity: 0.75; display: block; }
 
 /* ============ TRUST STRIP ============ */
 .trust{ padding: 32px 24px; background: var(--cream); }
