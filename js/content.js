@@ -12,8 +12,15 @@ onSnapshot(doc(db, "content", "site"), (snap) => {
   document.querySelectorAll("[data-content]").forEach((el) => {
     const path = el.dataset.content;
     const value = getNestedValue(data, path);
-    if (value) {
-      el.textContent = value;
+    if (!value) return;
+
+    el.textContent = value;
+
+    const hrefType = el.dataset.hrefType;
+    if (hrefType === "tel") {
+      el.href = "tel:" + value.replace(/[^0-9+]/g, "");
+    } else if (hrefType === "mailto") {
+      el.href = "mailto:" + value;
     }
   });
 });

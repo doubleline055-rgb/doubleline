@@ -251,6 +251,8 @@ const CONTENT_FIELDS = [
   { section: "Contact", key: "contact.eyebrow", label: "Small label", type: "text", default: "Contact" },
   { section: "Contact", key: "contact.title", label: "Section title", type: "text", default: "Questions? We're here." },
   { section: "Contact", key: "contact.subtitle", label: "Subtitle", type: "textarea", default: "Send a message and we'll get back to you directly." },
+  { section: "Contact", key: "contact.phone", label: "Phone number (e.g. +972-50-123-4567)", type: "text", default: "" },
+  { section: "Contact", key: "contact.email", label: "Email address", type: "text", default: "" },
 
   { section: "Footer", key: "footer.copyright", label: "Copyright line", type: "text", default: "© 2026 Dubole Line. All rights reserved." },
 ];

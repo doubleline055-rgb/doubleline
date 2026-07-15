@@ -166,18 +166,18 @@ section{ padding: 90px 24px; }
   position: relative;
   background: var(--charcoal);
   color: var(--cream);
-  padding: 120px 24px 100px;
+  padding: 80px 24px 60px;
   overflow: hidden;
 }
 .hero__dots{
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 24px;
-  width: 220px;
-  height: 140px;
-  background-image: radial-gradient(var(--amber) 2.5px, transparent 2.5px);
-  background-size: 22px 22px;
-  opacity: 0.5;
+  width: 180px;
+  height: 110px;
+  background-image: radial-gradient(var(--amber) 2px, transparent 2px);
+  background-size: 20px 20px;
+  opacity: 0.35;
 }
 .hero__inner{
   position: relative;
@@ -201,9 +201,9 @@ section{ padding: 90px 24px; }
 .hero__ctas{ display: flex; gap: 16px; flex-wrap: wrap; }
 .hero__mark{
   max-width: var(--max-width);
-  margin: 60px auto 0;
+  margin: 36px auto 0;
 }
-.hero__mark-svg{ width: 100%; height: auto; max-width: 400px; }
+.hero__mark-svg{ width: 100%; height: auto; max-width: 320px; opacity: 0.85; }
 
 /* ============ TRUST STRIP ============ */
 .trust{ padding: 32px 24px; background: var(--cream); }
@@ -417,7 +417,7 @@ section{ padding: 90px 24px; }
   .plan-card--featured{ transform: none; grid-column: span 2; max-width: 380px; margin: 0 auto; }
   .contact__inner{ grid-template-columns: 1fr; gap: 40px; }
   section{ padding: 70px 24px; }
-  .hero{ padding: 100px 24px 80px; }
+  .hero{ padding: 70px 24px 50px; }
 }
 
 /* ===== MOBILE ===== */
@@ -426,7 +426,7 @@ section{ padding: 90px 24px; }
   .plans__grid{ grid-template-columns: 1fr; }
   .plan-card--featured{ grid-column: span 1; max-width: none; }
   section{ padding: 56px 20px; }
-  .hero{ padding: 90px 20px 60px; }
+  .hero{ padding: 60px 20px 40px; }
   .hero__title{ font-size: clamp(30px, 9vw, 42px); }
   .hero__ctas{ flex-direction: column; }
   .hero__ctas .btn{ text-align: center; }
@@ -439,3 +439,25 @@ section{ padding: 90px 24px; }
 @media (prefers-reduced-motion: reduce){
   *{ scroll-behavior: auto !important; transition: none !important; }
 }
+
+.contact__direct{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 20px;
+}
+.contact__direct a{
+  font-weight: 700;
+  color: var(--amber-deep);
+}
+.contact__direct a:hover{ text-decoration: underline; }
+
+.footer__direct{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+.footer__direct a:hover{ color: var(--amber); }
