@@ -1,0 +1,150 @@
+.admin-body{
+  background: var(--cream);
+  min-height: 100vh;
+}
+
+/* ===== LOGIN SCREEN ===== */
+.admin-login{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.admin-login__box{
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 40px 36px;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+  text-align: center;
+}
+.admin-login__logo{
+  height: 40px;
+  margin: 0 auto 20px;
+}
+.admin-login__box h1{
+  font-size: 22px;
+  margin-bottom: 24px;
+}
+.admin-login__box form{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+.admin-login__box label{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.admin-login__box input{
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+}
+.admin-login__box input:focus{
+  outline: none;
+  border-color: var(--amber);
+}
+.admin-login__error{
+  color: #C0392B;
+  font-size: 13.5px;
+  min-height: 18px;
+}
+
+/* ===== DASHBOARD ===== */
+.admin-dashboard{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+.admin-header{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.admin-header__logo{ height: 32px; }
+.admin-header h1{ flex: 1; font-size: 22px; }
+
+.admin-tabs{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 28px;
+  border-bottom: 2px solid rgba(0,0,0,0.08);
+}
+.admin-tab{
+  background: none;
+  border: none;
+  padding: 12px 18px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--charcoal-light);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+}
+.admin-tab.is-active{
+  color: var(--ink);
+  border-bottom-color: var(--amber);
+}
+
+.admin-panel{ display: none; }
+.admin-panel.is-active{ display: block; }
+.admin-panel h2{ font-size: 20px; margin-bottom: 20px; }
+.admin-note{ color: var(--charcoal-light); font-size: 14.5px; }
+
+.admin-form{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--white);
+  padding: 22px;
+  border-radius: var(--radius);
+  margin-bottom: 28px;
+}
+.admin-form input,
+.admin-form textarea{
+  font-family: var(--font-body);
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0,0,0,0.12);
+}
+.admin-form input:focus,
+.admin-form textarea:focus{
+  outline: none;
+  border-color: var(--amber);
+}
+.admin-form button{ align-self: flex-start; }
+
+.admin-list{ display: flex; flex-direction: column; gap: 10px; }
+.admin-list-item{
+  background: var(--white);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+.admin-list-item__content{ flex: 1; }
+.admin-list-item__content strong{ display: block; font-size: 14.5px; margin-bottom: 4px; }
+.admin-list-item__content span{ font-size: 13.5px; color: var(--charcoal-light); }
+.admin-list-item__delete{
+  background: none;
+  border: none;
+  color: #C0392B;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.admin-list-item__delete:hover{ text-decoration: underline; }
