@@ -40,12 +40,12 @@
 <section class="hero" id="home">
   <div class="hero__dots" aria-hidden="true"></div>
   <div class="hero__inner">
-    <p class="eyebrow"><span class="bars" aria-hidden="true"></span>Kosher. No Data. No Games.</p>
-    <h1 class="hero__title">One kosher phone.<br>Two numbers.<br><span class="hero__title-accent">Zero extra charges.</span></h1>
-    <p class="hero__sub">Dubole Line gives you a real Israeli number and a US-reachable number on one kosher line — so family and friends call from the States without paying a cent extra, and you never touch data.</p>
+    <p class="eyebrow"><span class="bars" aria-hidden="true"></span><span data-content="hero.eyebrow">Kosher. No Data. No Games.</span></p>
+    <h1 class="hero__title"><span data-content="hero.titleLine1">One kosher phone.</span><br><span data-content="hero.titleLine2">Two numbers.</span><br><span class="hero__title-accent" data-content="hero.titleLine3">Zero extra charges.</span></h1>
+    <p class="hero__sub" data-content="hero.subtitle">Dubole Line gives you a real Israeli number and a US-reachable number on one kosher line — so family and friends call from the States without paying a cent extra, and you never touch data.</p>
     <div class="hero__ctas">
-      <a href="#plans" class="btn btn--amber">See the Plans</a>
-      <a href="#how-it-works" class="btn btn--ghost">How It Works →</a>
+      <a href="#plans" class="btn btn--amber" data-content="hero.ctaPrimary">See the Plans</a>
+      <a href="#how-it-works" class="btn btn--ghost" data-content="hero.ctaSecondary">How It Works →</a>
     </div>
   </div>
   <div class="hero__mark" aria-hidden="true">
@@ -65,86 +65,74 @@
 <!-- ===== TRUST STRIP ===== -->
 <section class="trust">
   <div class="trust__inner">
-    <div class="trust__item"><span class="dot"></span>Kosher certified</div>
-    <div class="trust__item"><span class="dot"></span>No internet, no data</div>
-    
-    <div class="trust__item"><span class="dot"></span>Real human support</div>
+    <div class="trust__item"><span class="dot"></span><span data-content="trust.item1">Kosher certified</span></div>
+    <div class="trust__item"><span class="dot"></span><span data-content="trust.item2">No internet, no data</span></div>
+    <div class="trust__item"><span class="dot"></span><span data-content="trust.item3">Real human support</span></div>
   </div>
 </section>
 
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how" id="how-it-works">
-  <p class="eyebrow eyebrow--dark"><span class="bars"></span>How It Works</p>
-  <h2 class="section-title">Three steps. One kosher line.</h2>
+  <p class="eyebrow eyebrow--dark"><span class="bars"></span><span data-content="how.eyebrow">How It Works</span></p>
+  <h2 class="section-title" data-content="how.title">Three steps. One kosher line.</h2>
 
   <div class="how__steps">
     <div class="how__step">
       <span class="how__num">01</span>
-      <h3>Order your SIM</h3>
-      <p>Choose a plan and order your kosher SIM card directly from the site, or through Amazon.</p>
+      <h3 data-content="how.step1Title">Order your SIM</h3>
+      <p data-content="how.step1Text">Choose a plan and order your kosher SIM card directly from the site, or through Amazon.</p>
     </div>
     <div class="how__step">
       <span class="how__num">02</span>
-      <h3>Get two numbers, one line</h3>
-      <p>Your SIM arrives with a real Israeli number and a US-reachable number, active on a single kosher device.</p>
+      <h3 data-content="how.step2Title">Get two numbers, one line</h3>
+      <p data-content="how.step2Text">Your SIM arrives with a real Israeli number and a US-reachable number, active on a single kosher device.</p>
     </div>
     <div class="how__step">
       <span class="how__num">03</span>
-      <h3>Call, without the extra charge</h3>
-      <p>Family in the US call your US-reachable number like a local call. No roaming games, no data, ever.</p>
+      <h3 data-content="how.step3Title">Call, without the extra charge</h3>
+      <p data-content="how.step3Text">Family in the US call your US-reachable number like a local call. No roaming games, no data, ever.</p>
     </div>
   </div>
 </section>
 
 <!-- ===== PLANS ===== -->
 <section class="plans" id="plans">
-  <p class="eyebrow"><span class="bars"></span>Plans</p>
-  <h2 class="section-title section-title--light">Pick your line</h2>
-  <p class="section-sub">Final pricing is confirmed at checkout. Plans below are a preview.</p>
+  <p class="eyebrow"><span class="bars"></span><span data-content="plans.eyebrow">Plans</span></p>
+  <h2 class="section-title section-title--light" data-content="plans.title">Pick your line</h2>
+  <p class="section-sub" data-content="plans.subtitle">Final pricing is confirmed at checkout. Plans below are a preview.</p>
 
   <div class="plans__grid" id="plansGrid">
     <p style="color: var(--cream);">Loading plans...</p>
   </div>
 
-  <p class="plans__amazon">Prefer Amazon? <a href="#" id="amazonLink">Buy the SIM card here →</a></p>
+  <p class="plans__amazon"><span data-content="plans.amazonPrefix">Prefer Amazon?</span> <a href="#" id="amazonLink" target="_blank" rel="noopener" data-content="plans.amazonLinkText">Buy the SIM card here →</a></p>
 </section>
 
 <!-- ===== FAQ ===== -->
 <section class="faq" id="faq">
-  <p class="eyebrow eyebrow--dark"><span class="bars"></span>FAQ</p>
-  <h2 class="section-title">Questions, answered</h2>
+  <p class="eyebrow eyebrow--dark"><span class="bars"></span><span data-content="faq.eyebrow">FAQ</span></p>
+  <h2 class="section-title" data-content="faq.title">Questions, answered</h2>
 
   <div class="faq__list" id="faqList">
-    <details class="faq__item" open>
-      <summary>Is this really a kosher line — no internet at all?</summary>
-      <p>Correct. Dubole Line runs on kosher-certified devices with no data access, so there's no internet, browser, or app store — calling and texting only.</p>
-    </details>
-    <details class="faq__item">
-      <summary>How do people in the US call me without paying extra?</summary>
-      <p>Your line comes with a US-reachable number alongside your Israeli number. When someone in the US calls that number, it's treated like a normal domestic US call on their end.</p>
-    </details>
-    <details class="faq__item">
-      <summary>How long does shipping take?</summary>
-      <p>Shipping times depend on your location — this will be confirmed at checkout.</p>
-    </details>
+    <p>Loading FAQs...</p>
   </div>
-  <p class="faq__note">More questions get added here regularly.</p>
+  <p class="faq__note" data-content="faq.note">More questions get added here regularly.</p>
 </section>
 
 <!-- ===== ABOUT ===== -->
 <section class="about" id="about">
-  <p class="eyebrow"><span class="bars"></span>About</p>
-  <h2 class="section-title section-title--light">Double everything, simplified</h2>
-  <p class="about__body">Dubole Line was built for one purpose: let people live a kosher, data-free life without cutting off the people who call them from the US. One kosher device, two numbers, no extra charges — that's double everything.</p>
+  <p class="eyebrow"><span class="bars"></span><span data-content="about.eyebrow">About</span></p>
+  <h2 class="section-title section-title--light" data-content="about.title">Double everything, simplified</h2>
+  <p class="about__body" data-content="about.body">Dubole Line was built for one purpose: let people live a kosher, data-free life without cutting off the people who call them from the US. One kosher device, two numbers, no extra charges — that's double everything.</p>
 </section>
 
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
   <div class="contact__inner">
     <div class="contact__copy">
-      <p class="eyebrow eyebrow--dark"><span class="bars"></span>Contact</p>
-      <h2 class="section-title">Questions? We're here.</h2>
-      <p>Send a message and we'll get back to you directly.</p>
+      <p class="eyebrow eyebrow--dark"><span class="bars"></span><span data-content="contact.eyebrow">Contact</span></p>
+      <h2 class="section-title" data-content="contact.title">Questions? We're here.</h2>
+      <p data-content="contact.subtitle">Send a message and we'll get back to you directly.</p>
     </div>
 
     <form class="contact__form" id="contactForm">
@@ -190,13 +178,15 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
-    <p class="footer__copy">&copy; 2026 Dubole Line. All rights reserved.</p>
+    <p class="footer__copy" data-content="footer.copyright">&copy; 2026 Dubole Line. All rights reserved.</p>
   </div>
 </footer>
 
 <script type="module" src="js/main.js"></script>
+<script type="module" src="js/content.js"></script>
 <script type="module" src="js/faq.js"></script>
 <script type="module" src="js/contact.js"></script>
 <script type="module" src="js/plans.js"></script>
+<script type="module" src="js/amazon.js"></script>
 </body>
 </html>

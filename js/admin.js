@@ -6,7 +6,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 import {
   collection, addDoc, getDocs, deleteDoc, doc, setDoc, getDoc,
-  query, orderBy, serverTimestamp
+  query, orderBy
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const loginScreen = document.getElementById("loginScreen");
@@ -21,7 +21,6 @@ loginForm.addEventListener("submit", async (e) => {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
   loginError.textContent = "";
-
   try {
     await signInWithEmailAndPassword(auth, email, password);
   } catch (error) {
@@ -39,6 +38,8 @@ onAuthStateChanged(auth, (user) => {
     loadPlans();
     loadPopupSettings();
     loadMessages();
+    loadSiteSettings();
+    loadContentFields();
   } else {
     loginScreen.hidden = false;
     dashboard.hidden = true;
@@ -106,11 +107,8 @@ planForm.addEventListener("submit", async (e) => {
   const name = document.getElementById("planName").value;
   const price = document.getElementById("planPrice").value;
   const features = document.getElementById("planFeatures").value
-    .split("\n")
-    .map((f) => f.trim())
-    .filter((f) => f.length > 0);
+    .split("\n").map((f) => f.trim()).filter((f) => f.length > 0);
   const featured = document.getElementById("planFeatured").checked;
-
   await addDoc(collection(db, "plans"), { name, price, features, featured });
   planForm.reset();
   loadPlans();
@@ -149,7 +147,6 @@ popupForm.addEventListener("submit", async (e) => {
   const type = document.getElementById("popupType").value;
   const text = document.getElementById("popupText").value;
   const active = document.getElementById("popupActive").checked;
-
   await setDoc(doc(db, "settings", "popup"), { type, text, active });
   popupStatus.textContent = "Saved!";
   setTimeout(() => (popupStatus.textContent = ""), 2000);
@@ -194,6 +191,157 @@ async function loadMessages() {
   });
   attachDeleteHandlers(messagesAdminList, loadMessages);
 }
+
+// ===== SITE SETTINGS (Amazon link) =====
+const settingsForm = document.getElementById("settingsForm");
+const settingsStatus = document.getElementById("settingsStatus");
+
+settingsForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const amazonUrl = document.getElementById("amazonUrl").value;
+  await setDoc(doc(db, "settings", "site"), { amazonUrl });
+  settingsStatus.textContent = "Saved!";
+  setTimeout(() => (settingsStatus.textContent = ""), 2000);
+});
+
+async function loadSiteSettings() {
+  const snap = await getDoc(doc(db, "settings", "site"));
+  if (snap.exists()) {
+    document.getElementById("amazonUrl").value = snap.data().amazonUrl || "";
+  }
+}
+
+// ===== SITE TEXT (CONTENT) =====
+const CONTENT_FIELDS = [
+  { section: "Hero", key: "hero.eyebrow", label: "Small label above headline", type: "text" },
+  { section: "Hero", key: "hero.titleLine1", label: "Headline — line 1", type: "text" },
+  { section: "Hero", key: "hero.titleLine2", label: "Headline — line 2", type: "text" },
+  { section: "Hero", key: "hero.titleLine3", label: "Headline — line 3 (accent color)", type: "text" },
+  { section: "Hero", key: "hero.subtitle", label: "Subtitle paragraph", type: "textarea" },
+  { section: "Hero", key: "hero.ctaPrimary", label: "Primary button text", type: "text" },
+  { section: "Hero", key: "hero.ctaSecondary", label: "Secondary button text", type: "text" },
+
+  { section: "Trust Strip", key: "trust.item1", label: "Item 1", type: "text" },
+  { section: "Trust Strip", key: "trust.item2", label: "Item 2", type: "text" },
+  { section: "Trust Strip", key: "trust.item3", label: "Item 3", type: "text" },
+
+  { section: "How It Works", key: "how.eyebrow", label: "Small label", type: "text" },
+  { section: "How It Works", key: "how.title", label: "Section title", type: "text" },
+  { section: "How It Works", key: "how.step1Title", label: "Step 1 title", type: "text" },
+  { section: "How It Works", key: "how.step1Text", label: "Step 1 text", type: "textarea" },
+  { section: "How It Works", key: "how.step2Title", label: "Step 2 title", type: "text" },
+  { section: "How It Works", key: "how.step2Text", label: "Step 2 text", type: "textarea" },
+  { section: "How It Works", key: "how.step3Title", label: "Step 3 title", type: "text" },
+  { section: "How It Works", key: "how.step3Text", label: "Step 3 text", type: "textarea" },
+
+  { section: "Plans", key: "plans.eyebrow", label: "Small label", type: "text" },
+  { section: "Plans", key: "plans.title", label: "Section title", type: "text" },
+  { section: "Plans", key: "plans.subtitle", label: "Subtitle", type: "textarea" },
+  { section: "Plans", key: "plans.amazonPrefix", label: "Amazon line prefix text", type: "text" },
+  { section: "Plans", key: "plans.amazonLinkText", label: "Amazon link text", type: "text" },
+
+  { section: "FAQ", key: "faq.eyebrow", label: "Small label", type: "text" },
+  { section: "FAQ", key: "faq.title", label: "Section title", type: "text" },
+  { section: "FAQ", key: "faq.note", label: "Bottom note", type: "text" },
+
+  { section: "About", key: "about.eyebrow", label: "Small label", type: "text" },
+  { section: "About", key: "about.title", label: "Section title", type: "text" },
+  { section: "About", key: "about.body", label: "Body paragraph", type: "textarea" },
+
+  { section: "Contact", key: "contact.eyebrow", label: "Small label", type: "text" },
+  { section: "Contact", key: "contact.title", label: "Section title", type: "text" },
+  { section: "Contact", key: "contact.subtitle", label: "Subtitle", type: "textarea" },
+
+  { section: "Footer", key: "footer.copyright", label: "Copyright line", type: "text" },
+];
+
+const contentFieldsContainer = document.getElementById("contentFields");
+const saveContentBtn = document.getElementById("saveContentBtn");
+const contentStatus = document.getElementById("contentStatus");
+
+function getNestedValue(obj, path) {
+  return path.split(".").reduce((acc, key) => (acc && acc[key] !== undefined ? acc[key] : undefined), obj);
+}
+
+function setNestedValue(obj, path, value) {
+  const keys = path.split(".");
+  let cur = obj;
+  keys.forEach((key, i) => {
+    if (i === keys.length - 1) {
+      cur[key] = value;
+    } else {
+      cur[key] = cur[key] || {};
+      cur = cur[key];
+    }
+  });
+}
+
+function buildContentForm() {
+  contentFieldsContainer.innerHTML = "";
+  let currentSection = "";
+
+  CONTENT_FIELDS.forEach((field) => {
+    if (field.section !== currentSection) {
+      currentSection = field.section;
+      const heading = document.createElement("h3");
+      heading.textContent = currentSection;
+      heading.style.marginTop = "26px";
+      heading.style.marginBottom = "10px";
+      heading.style.fontSize = "16px";
+      contentFieldsContainer.appendChild(heading);
+    }
+
+    const wrapper = document.createElement("label");
+    wrapper.style.display = "flex";
+    wrapper.style.flexDirection = "column";
+    wrapper.style.gap = "6px";
+    wrapper.style.fontWeight = "600";
+    wrapper.style.fontSize = "13.5px";
+    wrapper.style.marginBottom = "12px";
+
+    const labelText = document.createElement("span");
+    labelText.textContent = field.label;
+    wrapper.appendChild(labelText);
+
+    const inputEl = field.type === "textarea" ? document.createElement("textarea") : document.createElement("input");
+    if (field.type !== "textarea") inputEl.type = "text";
+    inputEl.dataset.key = field.key;
+    inputEl.style.fontFamily = "var(--font-body)";
+    inputEl.style.fontSize = "14px";
+    inputEl.style.padding = "10px 12px";
+    inputEl.style.borderRadius = "8px";
+    inputEl.style.border = "1.5px solid rgba(0,0,0,0.12)";
+    wrapper.appendChild(inputEl);
+
+    contentFieldsContainer.appendChild(wrapper);
+  });
+}
+
+async function loadContentFields() {
+  buildContentForm();
+  const snap = await getDoc(doc(db, "content", "site"));
+  if (snap.exists()) {
+    const data = snap.data();
+    document.querySelectorAll("#contentFields [data-key]").forEach((el) => {
+      const value = getNestedValue(data, el.dataset.key);
+      if (value) el.value = value;
+    });
+  }
+}
+
+saveContentBtn.addEventListener("click", async () => {
+  const updates = {};
+  document.querySelectorAll("#contentFields [data-key]").forEach((el) => {
+    const value = el.value.trim();
+    if (value.length > 0) {
+      setNestedValue(updates, el.dataset.key, value);
+    }
+  });
+
+  await setDoc(doc(db, "content", "site"), updates, { merge: true });
+  contentStatus.textContent = "All changes saved!";
+  setTimeout(() => (contentStatus.textContent = ""), 2500);
+});
 
 // ===== SHARED DELETE HANDLER =====
 function attachDeleteHandlers(container, reloadFn) {

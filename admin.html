@@ -44,6 +44,8 @@
     <button class="admin-tab" data-tab="plans">Plans</button>
     <button class="admin-tab" data-tab="popup">Popup / Banner</button>
     <button class="admin-tab" data-tab="messages">Messages</button>
+    <button class="admin-tab" data-tab="settings">Settings</button>
+    <button class="admin-tab" data-tab="content">Site Text</button>
   </nav>
 
   <!-- FAQ TAB -->
@@ -74,12 +76,6 @@
     <div class="admin-list" id="planAdminList">Loading...</div>
   </section>
 
-<!-- MESSAGES TAB -->
-  <section class="admin-panel" id="panel-messages">
-    <h2>Contact Messages</h2>
-    <div class="admin-list" id="messagesAdminList">Loading...</div>
-  </section>
-
   <!-- POPUP TAB -->
   <section class="admin-panel" id="panel-popup">
     <h2>Popup / Banner</h2>
@@ -97,6 +93,32 @@
       <button type="submit" class="btn btn--amber">Save</button>
       <p class="admin-note" id="popupStatus"></p>
     </form>
+  </section>
+
+  <!-- MESSAGES TAB -->
+  <section class="admin-panel" id="panel-messages">
+    <h2>Contact Messages</h2>
+    <div class="admin-list" id="messagesAdminList">Loading...</div>
+  </section>
+
+  <!-- SETTINGS TAB -->
+  <section class="admin-panel" id="panel-settings">
+    <h2>Site Settings</h2>
+    <form id="settingsForm" class="admin-form">
+      <label style="font-weight:600; font-size:14px;">Amazon SIM Card Link</label>
+      <input type="url" id="amazonUrl" placeholder="https://amazon.com/your-product-link">
+      <button type="submit" class="btn btn--amber">Save</button>
+      <p class="admin-note" id="settingsStatus"></p>
+    </form>
+  </section>
+
+  <!-- CONTENT TAB -->
+  <section class="admin-panel" id="panel-content">
+    <h2>Edit Site Text</h2>
+    <p class="admin-note" style="margin-bottom:20px;">Change any text below, then click Save All at the bottom. Leave a field blank to keep the site's current text.</p>
+    <div id="contentFields"></div>
+    <button id="saveContentBtn" class="btn btn--amber" style="margin-top:20px;">Save All</button>
+    <p class="admin-note" id="contentStatus"></p>
   </section>
 </div>
 

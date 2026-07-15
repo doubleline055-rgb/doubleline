@@ -7,12 +7,7 @@ navBurger?.addEventListener('click', () => {
 });
 
 
-// ===== Amazon link placeholder =====
-const amazonLink = document.getElementById('amazonLink');
-amazonLink?.addEventListener('click', (e) => {
-  e.preventDefault();
-  alert('Amazon product link goes here once he sends it.');
-});
+
 
 // ===== Popup close =====
 const popup = document.getElementById('popup');
