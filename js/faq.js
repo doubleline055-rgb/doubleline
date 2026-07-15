@@ -1,22 +1,20 @@
 import { db } from "./firebase-config.js";
-import { collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { collection, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-async function loadFAQs() {
-  const faqList = document.getElementById("faqList");
-  if (!faqList) return;
+const faqList = document.getElementById("faqList");
 
-  try {
-    const q = query(collection(db, "faqs"), orderBy("order"));
-    const snapshot = await getDocs(q);
+if (faqList) {
+  const q = query(collection(db, "faqs"), orderBy("order"));
 
+  onSnapshot(q, (snapshot) => {
     if (snapshot.empty) {
       faqList.innerHTML = "<p>No FAQs added yet.</p>";
       return;
     }
 
     faqList.innerHTML = "";
-    snapshot.forEach((doc) => {
-      const data = doc.data();
+    snapshot.forEach((docSnap) => {
+      const data = docSnap.data();
       const item = document.createElement("details");
       item.className = "faq__item";
       item.innerHTML = `
@@ -25,10 +23,8 @@ async function loadFAQs() {
       `;
       faqList.appendChild(item);
     });
-  } catch (error) {
+  }, (error) => {
     console.error("Error loading FAQs:", error);
     faqList.innerHTML = "<p>Couldn't load FAQs right now.</p>";
-  }
+  });
 }
-
-loadFAQs();

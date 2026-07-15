@@ -1,13 +1,10 @@
 import { db } from "./firebase-config.js";
-import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
-async function loadPlans() {
-  const plansGrid = document.getElementById("plansGrid");
-  if (!plansGrid) return;
+const plansGrid = document.getElementById("plansGrid");
 
-  try {
-    const snapshot = await getDocs(collection(db, "plans"));
-
+if (plansGrid) {
+  onSnapshot(collection(db, "plans"), (snapshot) => {
     if (snapshot.empty) {
       plansGrid.innerHTML = "<p style='color: var(--cream);'>Plans coming soon.</p>";
       return;
@@ -29,10 +26,8 @@ async function loadPlans() {
       `;
       plansGrid.appendChild(card);
     });
-  } catch (error) {
+  }, (error) => {
     console.error("Error loading plans:", error);
     plansGrid.innerHTML = "<p style='color: var(--cream);'>Couldn't load plans right now.</p>";
-  }
+  });
 }
-
-loadPlans();
